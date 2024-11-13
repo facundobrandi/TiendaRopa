@@ -1,12 +1,12 @@
 /front_end/node_modules
 
-/BackEnd/.vs
+BackEnd/.vs/
 
-/BackEnd/Categoria_Api/bin
-/BackEnd/Categoria_Api/obj
+BackEnd/Categoria_Api/bin/
+BackEnd/Categoria_Api/obj/
 
-/BackEnd/Product_Api/bin
-/BackEnd/Product_Api/obj
+BackEnd/Product_Api/bin/
+BackEnd/Product_Api/obj/
 
-/BackEnd/TiendaRopa_Config/bin
-/BackEnd/TiendaRopa_Config/obj
+BackEnd/TiendaRopa_Config/bin/
+BackEnd/TiendaRopa_Config/obj7
