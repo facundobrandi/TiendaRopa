@@ -1,1 +1,0 @@
-Scaffold-DbContext "Host=localhost; Database=Tienda_Ropa; Username=postgres; Password=12345" Npgsql.EntityFrameworkCore.PostgreSQL -OutPutDir Models
