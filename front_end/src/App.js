@@ -8,6 +8,7 @@ import { Home } from './Pages/Home';
 import { CreateProduct } from './Pages/CreateProduct';
 import { UpdateProduct } from './Pages/UpdateProduct';
 import { CreateCategoria } from './Pages/CreateCategoria';
+import Carrito from './Components/carrito';
 
 function App() {
   return (

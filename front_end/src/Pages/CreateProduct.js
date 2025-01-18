@@ -22,7 +22,7 @@ export const CreateProduct = () => {
   if (loading_2) return <p>Cargando...</p>;
   if (error_2) return <p>Error: {error_2.message}</p>;
 
-  // Esquema de validación usando Yup
+  
 const validationSchema = Yup.object({
   product: Yup.string().required('El nombre del producto es obligatorio'),
   descriptionShort: Yup.string().required('La descripción corta es obligatoria'),
@@ -88,7 +88,6 @@ const validationSchema = Yup.object({
               </div>
             </Col>
           </Row>
-
           <Row className="mb-3">
             <Col>
               <div className="form-group">
@@ -98,7 +97,6 @@ const validationSchema = Yup.object({
               </div>
             </Col>
           </Row>
-
           <Row className="mb-3">
             <Col md="4">
               <div className="form-group">
@@ -122,7 +120,6 @@ const validationSchema = Yup.object({
               </div>
             </Col>
           </Row>
-
           <Row className="mb-3">
             <Col md="4">
               <div className="form-group">
@@ -162,7 +159,6 @@ const validationSchema = Yup.object({
               </div>
             </Col>
           </Row>
-
           <Button type="submit" disabled={isSubmitting}>
             Submit form
           </Button>
