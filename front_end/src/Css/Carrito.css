@@ -1,0 +1,21 @@
+.carrito ul {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+  }
+  
+  .carrito li {
+    display: flex;
+    justify-content: space-between; /* Distribuye el contenido entre ambos extremos */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin: 5px 0;
+  }
+  
+  .eliminar {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  

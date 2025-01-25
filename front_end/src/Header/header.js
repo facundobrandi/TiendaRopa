@@ -19,7 +19,7 @@ export const HeaderTienda = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">Tienda Ropa</Navbar.Brand>
+        <Navbar.Brand href="/home">Tienda Ropa</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/home">Home</Nav.Link>
             <NavDropdown title="Products">

@@ -3,16 +3,30 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { agregarAlCarrito } from '../Redux/actions';
 
+import { ToastContainer, toast } from 'react-toastify';
 
-export const Product = ({precio , Nombre , descShort , image}) => {
+
+export const Product = ({Id,precio , Nombre , descShort , image}) => {
 
   const dispatch = useDispatch();
 
+  const notify = () =>   toast.success('Producto comprado !', {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
+
   const handleAgregarAlCarrito = () => {
-    const productObj = {Nombre , precio}
+    const productObj = {Id,Nombre , precio}
+    notify();
     dispatch(agregarAlCarrito(productObj));
   };
 
@@ -28,6 +42,7 @@ export const Product = ({precio , Nombre , descShort , image}) => {
         {descShort}
       </Card.Text>
       <Button variant="primary" onClick={handleAgregarAlCarrito}>Comprar </Button>
+      <ToastContainer />
     </Card.Body>
   </Card>
   )

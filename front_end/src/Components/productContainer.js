@@ -6,12 +6,16 @@ import {  useGetProducts } from '../ApiCalls/GetProducts';
 import { useGetCategoria } from "../ApiCalls/GetCategorias";
 
 
+
+
 export const ProductContainer = () => {  
     const [IdCategoria,SetCategoria] = useState(0);
 
     const { products, loading, error } =  useGetProducts(IdCategoria);
 
     const { categoria, loading_2, error_2 } = useGetCategoria();
+
+
 
 
 
@@ -46,7 +50,7 @@ export const ProductContainer = () => {
       </Dropdown>
         <Row>
         {products.map((x,indice) => <Product key={indice} 
-        precio={x.price} Nombre={x.name} descShort={x.descShort} image={x.image}
+        precio={x.price}  Id={x.id} Nombre={x.name} descShort={x.descShort} image={x.image}
          ></Product>)}
         </Row>
     </Container>

@@ -13,9 +13,7 @@ const carritoReducer = (state = initialState, action) => {
       return { ...state, carrito: nuevoCarrito };
 
     case ELIMINAR_DEL_CARRITO:
-      const carritoActualizado = state.carrito.filter(
-        (producto) => producto.id !== action.payload
-      );
+      const carritoActualizado = state.carrito.filter((_, index) => index !== action.payload);
       localStorage.setItem("carrito", JSON.stringify(carritoActualizado)); // Guardar en localStorage
       return { ...state, carrito: carritoActualizado };
 

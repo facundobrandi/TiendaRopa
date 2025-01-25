@@ -12,15 +12,33 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useGetCategoria } from '../ApiCalls/GetCategorias';
 import { PostProducts } from '../ApiCalls/PostProducts';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
 export const CreateProduct = () => {
 
   const { categoria, loading_2, error_2 } = useGetCategoria();
+  const [popUp, setpopUp] = useState(false)
 
   if (loading_2) return <p>Cargando...</p>;
   if (error_2) return <p>Error: {error_2.message}</p>;
+  const notify = () =>   toast.success('Producto Creado', {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
+  if (popUp) {
+    notify();
+  }
+
+
+
 
   
 const validationSchema = Yup.object({
@@ -48,8 +66,9 @@ const validationSchema = Yup.object({
   };
 
   const handleSubmit = (values) => {
-    console.log(values);
-    PostProducts(values)
+    const response = PostProducts(values);
+    console.log(response);
+    setpopUp(true);
   };
 
   return (
@@ -162,6 +181,7 @@ const validationSchema = Yup.object({
           <Button type="submit" disabled={isSubmitting}>
             Submit form
           </Button>
+          <ToastContainer />
         </Form>
       )}
     </Formik>
